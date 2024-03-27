@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #1e212c;
+  background-color: #fff;
+}
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  backdrop-filter: blur(5px); /* Add blur effect */
+}
+
+/* card-hover */
+.card__container {
+  position: relative;
+  z-index: 2;
+}
+
+.card__container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    180deg,
+    rgba(30, 33, 44, 0) 43.9%,
+    rgba(30, 33, 44, 0.03) 55.21%,
+    rgba(30, 33, 44, 0.33) 68.73%,
+    rgba(30, 33, 44, 0.56) 76.17%,
+    rgba(30, 33, 44, 0.77) 83.75%,
+    rgba(30, 33, 44, 0.92) 91.49%,
+    #1e212c 100%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card__container:hover::before {
+  opacity: 1;
+}
+
+/* slick-arrow */
+
+.slick-prev:before {
+  content: "\1F850" !important;
+}
+.slick-next:before {
+  content: "\1F852" !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #424551;
+  font-size: 30px;
+  padding: 8px;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+}
+.slick-prev:hover::before,
+.slick-next:hover::before {
+  background-color: #ff3f3a;
+  color: #fff;
+}
+.exploreCourse {
+  width: 100%;
+  display: flex !important;
+  border: 1px solid #e5e8ed;
+  background: #fff;
+}
+.slick-slide {
+  max-height: 500px;
+}
+.slick-slide > div {
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .exploreCourse {
+    flex-direction: column;
+  }
+  .slick-slide > div {
+    margin-right: 0;
+  }
+}
+
+.slide-bottom {
+  -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(-25%);
+    transform: translateY(-25%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}

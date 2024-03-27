@@ -1,0 +1,10 @@
+export { default as AboutUs } from "./AboutUs";
+export { default as Blogs } from "./Blogs";
+export { default as Contacts } from "./Contacts";
+export { default as Courses } from "./Courses";
+export { default as Error } from "./Error";
+export { default as Events } from "./Events";
+export { default as Home } from "./Home";
+export { default as SingleBlog } from "./SingleBlog";
+export { default as SingleCourse } from "./SingleCourse";
+export { default as SingleEvent } from "./SingleEvent";
